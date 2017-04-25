@@ -1,37 +1,22 @@
-## Welcome to GitHub Pages
+Setps To Follow
+===================
+1- npm init -y
 
-You can use the [editor on GitHub](https://github.com/mehmoodulhaq/mehmoodulhaq.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+SettingUp Protractor
+-------------
+1-  $ npm install -g protractor
+2-  webdriver-manager update
+3- webdriver-manager start 
+The above should start test server :  http://localhost:4444/wd/hub
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+SettingUp Karma
+-------------
+1-npm install -g karma-cli
+2- npm install karma karma-jasmine jasmine-core karma-chrome-launcher --save-dev
+3- npm install angular-mocks --save-dev
+4- karma init
+Answer normally yes and proceed ; make further changes in karma.config.js afterwards as needed.
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/mehmoodulhaq/mehmoodulhaq.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+SettingUp Gulp
+-------------
+In root folder make gulpfile.js

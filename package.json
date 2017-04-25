@@ -1,0 +1,19 @@
+{
+  "name": "spotify.github.io",
+  "version": "1.0.0",
+  "description": "A small test project created with love",
+  "main": "index.html",
+  "scripts": {
+    "test": "karma start karma.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mehmoodulhaq/spotify.github.io.git"
+  },
+  "author": "Mehmoodulhaq",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mehmoodulhaq/spotify.github.io/issues"
+  },
+  "homepage": "https://github.com/mehmoodulhaq/spotify.github.io#readme"
+}
