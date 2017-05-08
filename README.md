@@ -49,3 +49,6 @@ Used bootstrap grid system as a develpement tool to make application more respon
 
 #### Unit tests
 In progress
+
+#### Link to app
+https://whispering-reef-98882.herokuapp.com/#!/
