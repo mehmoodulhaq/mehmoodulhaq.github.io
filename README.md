@@ -36,7 +36,7 @@ Answer normally yes and proceed ; make further changes in karma.config.js afterw
 I've developed my own **Redux**  service that also uses **thunk** strategy to manage the state of the app with async data.
 
 #### LoalStorage
-Redux Service has used localStorage to save its states offline.
+Redux Service has used localStorage to save its states when brower closed.
 
 #### Sass
 Used Sass for UI with various gulp tasks to extract out unused css from and css file, used gulp tasks for minification and corssbrowsers compatibality tools like sass preprocessors.
