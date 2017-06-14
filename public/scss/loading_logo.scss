@@ -1,0 +1,112 @@
+div.post-bootstrap-del {
+    position: fixed;
+}
+
+div.post-bootstrap-del div.animated-container {
+    background-color: rgb(37, 43, 51);
+    bottom: 0px;
+    left: 0px;
+    opacity: 1.0;
+    position: fixed;
+    right: 0px;
+    top: 0px;
+    z-index: 9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+div.post-bootstrap-del div.messaging {
+    padding-top: 10px;
+    font-family: monospace;
+    left: 0px;
+    margin-top: -37px;
+    position: relative;
+    right: 0px;
+    text-align: center;
+}
+
+div.messaging .text {
+    font-size: 25px;
+    font-weight: 400;
+    margin: 41px 0px 11px;
+    color: rgba(240, 240, 240, .8);
+    letter-spacing: -2px;
+    word-spacing: -2px;
+}
+
+div.messaging .image {
+     background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEYAAABGCAYAAABxLuKEAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4QQaByoHL6g8sgAABhVJREFUeNrtm2uIVVUUx38zbmckFVMLqUwiMB8R5agdX43PMo1CmiQNoTed6EUfgigqUKi0+lAQ7Eg/VGb5SDBSK2d00nzsMF8VqI3IaJaajvMhs3HOaB/Onrgdzr137XPvReWe/6fhzJq19/mfvdf677X2QIoUKVKkSHGxoMLFOPD8CuB+4FFgFNADaAE2Au8qoxvLjpjA87sDy4FpOcw+AJ5SRndc6sRUOth+locUgCeA+WWzYgLPnw6sFvrsAIYoo38thxUzy8FnF2BmuWylGxz93lAuxJxx9NtWLsTscPS7s1yI+dAGVQlagKVlQYwyei/wssD0HPC4MvpU2egYZfR84BngdBaTE0CdMnpl2R0JrKa5ApgDeEBv4Lg9EnyujP4rPWWlSJEiRQmC78WGwPOHAZOAoUBfq7p/A7YD3yijWxITE3h+lRVm3Quc5wvK6LcjE18NTE/orw3opYxui/hUwGzgRUtINrQDnwKvKqMPJ9Exo4tACkB95AWqgAkF+NsRQ4oH7AI+zkMKQFfgIeCXwPPrkhBzRxFIOQHsiTwbC1xWgM/vMwipCDz/FWALcKOjn57AssDz51wIYjYoo89Fnt1eoM+tGStvCTAXt6pj9F0XBp5/k8g48Py+wPBibyOLqQX63GLjyQrcimXZUA28L2VxcpGyU0PM0WFYAf4OKKOPERbY7y5iIrst8PwxEmKmFmGwZmX0gcizKQUSviXw/KeBR0qQ5R/Ie2guQhzIto0KjVungHciz44CXwP7CauKVwETgZGOvidLiKnNsZr2CNN4Q8yzl2ywjMPrVofk+6pV9udWq1kWKaODGJF3J7DYCjwJBgWeXx2VAiLlG3h+DfCjcKB+yujjDmp1H/KC+R/A+HztmMDzxwKbHLbvdcro5nzpOg6ThAP85EhKfwdS2oB7JD0qZfRm4EuH7dRbomMKIabBcX9PcbB9Sxm93cF+nYPtWWdirHaoLRExUsJbgDccfR9xsG1NsmJuFQbdDqCx2BnBYqEy+m9H312Fdh3AsSTESL/qNpc6b+D5Q4CrheafJEjxA4R2+/LdyMhGzMQSbSPpajmojP45ATGjhHZ541ZlzFftZk/FFzLwrk1QsOpSzIQRt2JG28NWPpwBtjlOXFqbWZ9wtfQR2n6bhBjpct+ojD7rMPHhQC+B3XlgQwJi7hLa7VRGH01CjPSr1pcovuxMWKeVlk+/kpYdMpd7D4cAVqrAuz5BfOkP3Cw0X+NMDDCO8EZUPpwEdjtMvJv1XYqV6LJaTgI/JCFGmjXiypi5MFYY0NvtQbBU8WWtdN6VF1l82eqqdgPPr3b4oGukfiszBugD1Fxg/ZIkTU9A1ok4R1jkwnXF1AprGc3K6CaHLzoIebG9oYTxZavLhSYViQMi/eI48TeRtTxOAyYBMdOEdquzfLihwPPAR8BmZfT56IqRVvRd1G4dMMNBMLY7xpd+wMACazVPAo/ZoN8UeP5rUWIGCwfY5bCFFjm8Z5JtNEho90/cvG2L5+GMR9djuyaZxEgLyUcFpAyxL9qrxMRcKbQ7FFdEJyywR+tOi6PEdBMO0iUPKTMJ+8vXOLxgXN9bgp5Cu+qYedYAz8WsrOVRYqQFp1kxg1QGnj8x8Px1wDLgckefjY6CsROtQrsBgecPzpjvQGBlJPlA2J75M5qVDpH/WgXA3MDzxxOWNKsIK/61hM2vTKwCRhD+s1cpthFAs9CuAmgMPH+p3TqzY7RPO7AgLl1vEhLTqWRzqdn9hIVsaQarT0jMbsKOZW+BbT/g2Ry/X6CMPhQn8Ip1zf13e3aRirrDLoLxfyIs3H5LijDnHcC8WOWrjN7gIpmz4CBh17CplGWGCObZU3NSHAFmRNu1UUX6INCUcIBVwAhldFPg+ZXIC+r1hbBir4rUkf0qfy7stR/ycM7TtW21jgK+cHR+rzJ6RkblrUa47wsJvJnz/o6wVi3tWrYD7wEjY66v/Bets+mRW2xqHmczTx+rYVqBA1arrAA2dZ4vMv72WmGMOauMXlOk2Nb5789TgPuAMTZT9iVssJ20WqkeWOJ6izNFihQpUqRIkeJSwb96FMLKW9gEJwAAAABJRU5ErkJggg==');
+    background-repeat: no-repeat;
+    width: 70px;
+    height: 90px;
+    z-index: 10;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    margin-top: -30px;
+}
+
+div.post-bootstrap-del h1 {
+    font-size: 26px;
+    line-height: 35px;
+    margin: 0px 0px 20px 0px;
+    color: #9ca4ab;
+}
+
+div.post-bootstrap-del p {
+    font-size: 18px;
+    line-height: 14px;
+    margin: 0px 0px 0px 0px;
+}
+
+.loader,
+.loader:after {
+    border-radius: 50%;
+    width: 10em;
+    height: 10em;
+}
+
+.loader-circle {
+    background: yellow;
+    z-index: 510;
+}
+
+.loader {
+    margin: 0px auto;
+    font-size: 25px;
+    position: relative;
+    text-indent: -9999em;
+    border-top: 0.14em solid #1d2228;
+    border-right: 0.14em solid #1d2228;
+    border-bottom: 0.14em solid #1d2228;
+    border-left: .14em solid #fc3768;
+    transform: translateZ(0);
+    animation: load8 1.8s infinite linear;
+    @include mq('(max-height:500px) ') {
+        font-size:18px;
+    }
+}
+
+@-webkit-keyframes load8 {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes load8 {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}

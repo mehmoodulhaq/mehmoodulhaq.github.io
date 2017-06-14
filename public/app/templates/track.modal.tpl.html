@@ -1,0 +1,57 @@
+<div class="mus-album-modal-parent track-modal" ng-init="Ctrl = $parent.Ctrl">
+    <div class="modal-wraper">
+        <div class="row">
+            <div class="col">
+                <div class="top-image-area">
+                    <!--resp-image is a directive to select a responsive image among three-->
+                    <div class="image-wraper">
+                        <div class="image" resp-image="Ctrl.getCardByStatus(Ctrl.modals.selectedCard)"></div>
+                    </div>
+                    <div class="mus-card-back" ng-click="Ctrl.modals.goBack('album')"></div>
+                    <div class="overlay"></div>
+                    <div class="close" ng-click="Ctrl.modals.closeModal(Ctrl.modals.selectedCard.status)"></div>
+
+                    <div class="loader-ring" ng-if="Ctrl.modals.showLoading && !Ctrl.modals.dataArray.lenght"></div>
+                    <div class="text-wraper">
+                        <div class="album-heading-mobile">Tracks On</div>
+                        <div class="text">{{Ctrl.getCardByStatus(Ctrl.modals.selectedCard).name}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="header-text">{{'Tracks'}}</div>
+                <div class="line"></div>
+                <div class="mus-more-albums">
+                    <fieldset class="input-wraper" ng-disabled="Ctrl.modals.validateGetMore('tracks')">
+                        <input type="button" ng-click="Ctrl.modals.getTracks(Ctrl.modals.selectedCard);" value=". . .">
+                    </fieldset>
+                    <div class="count">
+                        <span>{{Ctrl.modals.selectedCard.tracks.next? Ctrl.modals.selectedCard.tracks.offset + Ctrl.modals.selectedCard.tracks.limit :Ctrl.modals.selectedCard.tracks.total}}</span>/<span>{{Ctrl.modals.selectedCard.tracks.total}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="albums">
+                    <div class="nano">
+                        <div class="nano-content">
+                            <div class="album track" nano-scroller ng-init="selected = false;" ng-class='{"selected":selected}' ng-click="selected = ! selected; Ctrl.modals.togglePlay(track.preview_url)" ng-repeat="track in Ctrl.modals.tracksArray track by $index">
+
+                                <div class="text-area">
+                                    <div class="album-name">{{track.name}}</div>
+                                    <div class="album-year">{{track.duration_ms | date : 'mm : ss' }}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>

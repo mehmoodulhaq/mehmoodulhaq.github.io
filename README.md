@@ -1,5 +1,5 @@
-Setps  Followed
-------------
+Setps To Follow
+===================
 1- npm init -y
 
 SettingUp Protractor
@@ -24,6 +24,9 @@ SettingUp Karma
 3- npm install angular-mocks --save-dev
 4- karma init
 Answer normally yes and proceed ; make further changes in karma.config.js afterwards as needed.
+5- gulp test
+or for test driven development
+5- gulp tdd 
 
 ----------
 
@@ -32,11 +35,6 @@ Answer normally yes and proceed ; make further changes in karma.config.js afterw
 2- gulp prod  --- for production build (This will make a doc folder inside project with minified code)
 3- gulp test --- for test
 4- gulp tdd --- for test driven development
-#### State Management
-I've developed my own **Redux**  service that also uses **thunk** strategy to manage the state of the app with async data.
-
-#### LoalStorage
-Redux Service has used localStorage to save its states when brower closed.
 
 #### Sass
 Used Sass for UI with various gulp tasks to extract out unused css from and css file, used gulp tasks for minification and corssbrowsers compatibality tools like sass preprocessors.
@@ -49,6 +47,3 @@ Used bootstrap grid system as a develpement tool to make application more respon
 
 #### Unit tests
 In progress
-
-#### Link to app
-https://whispering-reef-98882.herokuapp.com/#!/

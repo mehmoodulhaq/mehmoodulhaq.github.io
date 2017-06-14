@@ -1,0 +1,64 @@
+<div class="mus-album-modal-parent" ng-init="Ctrl = $parent.Ctrl">
+    <div class="modal-wraper">
+        <div class="row">
+            <div class="col">
+                <div class="top-image-area">
+
+                    <!--resp-image is a directive to select a responsive image among three-->
+                    <div class="image-wraper">
+                        <div class="image" resp-image="Ctrl.modals.selectedCard"></div>
+                    </div>
+                    <div class="overlay"></div>
+                    <div class="close" ng-click="Ctrl.modals.closeModal(Ctrl.modals.selectedCard.status)"></div>
+                    <div ng-if="Ctrl.modals.showLoading && !Ctrl.modals.dataArray.lenght" class="loader-ring"></div>
+                    <div class="text-wraper">
+                        <div class="album-heading-mobile">Albums by</div>
+                        <div class="text">{{Ctrl.modals.selectedCard.name}}</div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="header-text">{{Ctrl.modals.selectedCard.name ||'Albums'}}</div>
+                <div class="line"></div>
+                <div class="mus-more-albums">
+
+                    <fieldset class="input-wraper" ng-disabled="Ctrl.modals.validateGetMore('albums')">
+                        <input type="button" value=". . ." ng-click="Ctrl.modals.getMoreAlbums();">
+                    </fieldset>
+                    <div class="count">
+                        <span>{{Ctrl.modals.selectedCard.albums.next? Ctrl.modals.selectedCard.albums.offset +Ctrl.modals.selectedCard.albums.limit :Ctrl.modals.selectedCard.albums.total}}</span>/<span>{{Ctrl.modals.selectedCard.albums.total}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="albums">
+                    <!--nano-scroll is a directive for shaping scroll bar-->
+                    <div class="nano">
+                        <div class="nano-content">
+                            <div class="album" ng-click="Ctrl.modals.slectAlbum(album)" ng-repeat="album in Ctrl.modals.albumsArray track by $index" nano-scroller>
+
+                                <div class="image-wraper">
+                                    <div class="image" resp-image="album"></div>
+                                    <div class="overlay"></div>
+                                </div>
+                                <div class="text-area">
+                                    <div class="album-name">{{album.name}}</div>
+                                    <div class="album-year">{{album.album_type ||'Oops! Not Known ' }}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>

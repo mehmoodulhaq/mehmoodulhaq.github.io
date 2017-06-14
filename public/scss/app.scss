@@ -1,0 +1,235 @@
+/* https://msdn.microsoft.com/library/hh869615(v=vs.85).aspx */
+
+
+/* http://thesassway.com/intermediate/responsive-web-design-in-sass-using-media-queries-in-sass-32 */
+
+
+/* @import './scss/loading_logo.scss'; */
+
+@import 'app_variables';
+@import 'helper/normalize_reboot.scss';
+@import 'helper/grids.scss';
+@import 'helper/app_mixins';
+%my-btn {
+    position: absolute;
+    height: 56px;
+    top: 50%;
+    transform: translateY(10%);
+    width: 70%;
+    border: lighten($header-search-bg-color, 10%);
+    min-height: 1px;
+    border-radius: 28px;
+    font-size: 18px;
+    color: #fefefe;
+    background: $search-button-color;
+    outline: none;
+    &:focus {
+        border-color: lighten($header-search-bg-color, 10%);
+        outline: lighten($header-search-bg-color, 5%);
+    }
+    &:disabled {
+        background-color: lighten($header-search-bg-color, 5%);
+        cursor: not-allowed;
+    }
+    @include mq('(max-height:500px)') {
+        transform: translateY(20%);
+        border-radius: 22.5px;
+        height: 45px;
+    }
+}
+
+// @import 'helper/cards.scss';
+@include font-face('RBlack', 'Raleway-Black', 'raleway');
+@include font-face('RBlack-i', 'Raleway-BlackItalic', 'raleway');
+@include font-face('RBold', 'Raleway-Bold', 'raleway');
+@include font-face('RBold-i', 'Raleway-BoldItalic', 'raleway');
+@include font-face('RExBold', 'Raleway-ExtraBold', 'raleway');
+@include font-face('RExBold-i', 'Raleway-ExtraBoldItalic', 'raleway');
+@include font-face('RExLight', 'Raleway-ExtraILight', 'raleway');
+@include font-face('RExLight-i', 'Raleway-ExtraILightItalic', 'raleway');
+@include font-face('Releway', 'Raleway-Regular', 'raleway');
+@include font-face('Releway-i', 'Raleway-Italic', 'raleway');
+@include font-face('Releway-l', 'Raleway-Light', 'raleway');
+@include font-face('Releway-li', 'Raleway-LightItalic', 'raleway');
+@include font-face('Releway-t', 'Raleway-Thin', 'raleway');
+@include font-face('Releway-ti', 'Raleway-ThinItalic', 'raleway');
+@include font-face('Releway-sb', 'Raleway-SemiBold', 'raleway');
+@include font-face('Releway-sbi', 'Raleway-SemiBoldItalic', 'raleway');
+@include font-face('RMedium', 'Raleway-Medium', 'raleway');
+@include font-face('RMedium-i', 'Raleway-MediumIt$desktopalic', 'raleway');
+body {
+    background-color: $body-bg;
+    font-family: $app-font;
+}
+
+html {
+    font-family: $app-font;
+}
+
+
+/*++++++++++++++++++++++++++++++++++++++++++++++
+* First landing page header scss 
+*/
+
+@import 'landing_page/landing_page_header.scss';
+
+/*++++++++++++++++++++++++++++++++++++++++++++++
+* First landing page sectin area scss 
+*/
+
+@import 'landing_page/landing_page_content.scss';
+@import 'modal_popup/album_modal.scss';
+.mus-blur {
+    @include blur(3px, 3);
+}
+
+.mus-material-1 {
+    @include card(1)
+}
+
+.mus-material-2 {
+    @include card(2)
+}
+
+.mus-material-2 {
+    @include card(3)
+}
+
+.mus-material-2 {
+    @include card(4)
+}
+
+.mus-material-2 {
+    @include card(5)
+}
+
+.loader-ring {
+    border: 10px solid #f3f3f3;
+    /* Light grey */
+    border-top: 10px solid rgba(16, 15, 15, 0.46);
+    /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+/** initial setup **/
+
+.nano {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 6px;
+}
+
+.nano>.nano-content {
+    position: absolute;
+    overflow: scroll;
+    overflow-x: hidden;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.nano>.nano-content:focus {
+    outline: thin dotted;
+}
+
+.nano>.nano-content::-webkit-scrollbar {
+    display: none;
+}
+
+.has-scrollbar>.nano-content::-webkit-scrollbar {
+    display: block;
+}
+
+.nano>.nano-pane {
+    background: rgba(0, 0, 0, .25);
+    position: absolute;
+    width: 10px;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    visibility: hidden\9;
+    /* Target only IE7 and IE8 with this hack */
+    opacity: .01;
+    -webkit-transition: .2s;
+    -moz-transition: .2s;
+    -o-transition: .2s;
+    transition: .2s;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.nano>.nano-pane>.nano-slider {
+    background: #444;
+    background: rgba(0, 0, 0, .5);
+    position: relative;
+    margin: 0 1px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}
+
+.nano:hover>.nano-pane,
+.nano-pane.active,
+.nano-pane.flashed {
+    visibility: visible\9;
+    /* Target only IE7 and IE8 with this hack */
+    opacity: 0.99;
+}
+
+// custom styling
+.nano {
+    height: 219px; // width: 280px;
+    background: white;
+}
+
+.nano .nano-content {
+    padding: 10px;
+}
+
+.nano .nano-pane {
+    background: #888;
+}
+
+.nano .nano-slider {
+    background: #111;
+}
+
+@include mq('(min-width:768px)') {
+    .nano {
+        height: 415px; // width: 640px;
+        background: white;
+    }
+}
+
+.card-1 {
+    @include card(1);
+}
+
+.card-4 {
+    @include card(4);
+}
+
+.stick {
+    position: 'fixed';
+    top: '50%';
+    left: '50%';
+    transform: translate(-50%, -50%);
+    z-index: 999999;
+}

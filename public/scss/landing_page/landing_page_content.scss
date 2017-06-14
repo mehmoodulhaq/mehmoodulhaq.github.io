@@ -1,0 +1,255 @@
+@import '../app_variables.scss';
+@import '../helper/app_mixins.scss';
+$landing-page-dsktop-card-width:265px;
+$card-margin-horizontal:15px;
+$landing-page-dsktop-card-height:328px;
+.mus-content-parent {
+    .mus-cards-panel-wrapper {
+        display: flex;
+        justify-content: space-around;
+        align-content: space-around;
+        min-width: 100%;
+        .mus-cards-panel {
+            padding-top: 60px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around; // @include mq('(min-width:0px)') {
+            //     width: ($landing-page-dsktop-card-width + ( $card-margin-horizontal * 2)) * 1;
+            // }
+            @include mq('(min-width:768px)') {
+                width: ($landing-page-dsktop-card-width + ( $card-margin-horizontal * 2)) * 2
+            }
+            @include mq('(min-width:992px)') {
+                width: ($landing-page-dsktop-card-width + ( $card-margin-horizontal * 2)) * 3;
+            }
+            @include mq('(min-width:1441px)') {
+                width: ($landing-page-dsktop-card-width + ( $card-margin-horizontal * 2)) * 4;
+            }
+            .mus-cards {
+                margin-bottom: 30px;
+                position: relative;
+                display: flex;
+                width: $landing-page-dsktop-card-width;
+                height: 80px;
+                background-color: lightcyan; // border: thin solid black;
+                transition: all .2s ease-in-out;
+                @include card(2);
+                @include mq('(min-width:768px)') {
+                    .back {
+                        width: 40px;
+                        height: 40px;
+                    } // position: relative;
+                    // display: flex;
+                    margin-bottom: 60px; // width: $landing-page-dsktop-card-width;
+                    height: $landing-page-dsktop-card-height; // background-color: lightcyan; // border: thin solid black;
+                    // @include card(2)
+                    &:hover {
+                        z-index: 9999;
+                        transform: scale(1.03);
+                    }
+                }
+                &:hover {
+                    // pointer-events: 
+                    overflow: hidden;
+                    transform: scale(1.04);
+                    z-index: 9999;
+                    .center-image {
+                        @include blur(4px, 4);
+                    }
+                    .side-icon {
+                        display: none;
+                        @include mq ('(min-width:768px)') {
+                            display: block;
+                        }
+                    }
+                    .action-icon {
+                        display: block;
+                        left: 13%;
+                        top: 50%;
+                        width: 40px;
+                        height: 60px;
+                        transform: translate(-50%, -50%);
+                        .text {
+                            position: relative;
+                            color: white;
+                            font-family: 'Raleway'; // font-size: 14px;
+                            font-size: 11px;
+                            top: 90%;
+                            width: 165%;
+                            transform: translate(-50%, -50%);
+                            left: 50%;
+                            text-align: center;
+                            font-weight: 800;
+                        }
+                        @include mq ('(min-width:768px)') {
+                            width: 85px;
+                            height: 100px;
+                            top: 35%;
+                            left: 50%;
+                            .text {
+                                font-size: 25px;
+                                top: 90%;
+                                width: 200%;
+                            }
+                        }
+                    }
+                }
+                .center-image-overlay {
+                    position: absolute;
+                    width: 25%;
+                    height: 80px;
+                    background-color: $card-overlay;
+                    @include mq('(min-width:768px)') {
+                        width: 100%;
+                        height: 268px; // background-image: url(../images/2.jpg);  
+                    }
+                }
+                .center-image {
+                    position: absolute;
+                    width: 25%;
+                    height: 80px;
+                    background-image: url(../images/2.jpg);
+                    background-size: cover;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    @include mq('(min-width:768px)') {
+                        width: 100%;
+                        height: 268px; // background-image: url(../images/2.jpg);  
+                    }
+                }
+                .text-wraper {
+                    position: absolute;
+                    width: 75%;
+                    height: 80px;
+                    background-color: white;
+                    font-family: $app-font;
+                    font-size: 15px;
+                    font-weight: 600;
+                    color: #414148;
+                    bottom: 0;
+                    right: 0;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    @include card(1);
+                    @include mq('(min-width:768px)') {
+                        // position: absolute;
+                        width: 100%;
+                        height: 66px;
+                        font-size: 18px; // background-color: white;
+                    }
+                    .text {
+                        position: relative;
+                        padding: 8px 10px;
+                        width: 100%;
+                        font-size: inherit;
+                    }
+                }
+                .side-icon {
+                    position: absolute;
+                    left: 10px;
+                    bottom: 10px;
+                    width: 100%;
+                    height: 25px;
+                    background-image: url(../images/album.png);
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    @include mq('(min-width:768px)') {
+                        left: 10px;
+                        bottom: 76px;
+                    }
+                }
+                .action-icon {
+                    display: none;
+                    position: absolute; // width: 16px;
+                    // height: 20px;
+                    // top: 50%;
+                    // left: 50%;
+                    // transform: translate(-50%, -50%);
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    background-image: url(../images/Bitmap@2x.png);
+                }
+            }
+        }
+    }
+    .mus-cards-empty {
+        height: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #383a49;
+        position: relative;
+        .mus-magnifier {
+            display: none;
+            @include mq('(min-width:768px)') {
+                display: block;
+                height: 100%;
+                width: 140px;
+                background-image: url(../images/Magnify@2x.png);
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: 100% 20%; // background-position: centeru
+            }
+        }
+        .text {
+            position: absolute;
+            // margin-top: 6%; // not working on firefox and chrom alike
+            top: 60%; // this is a fix for this
+            color: rgba(100, 100, 115, 0.8);
+            font-size: 22px;
+            font-weight: 400;
+        }
+    }
+    .mus-card-show-more-btn-area {
+        position: relative;
+        text-align: center;
+        width: 100%;
+        input {
+            position: relative;
+            height: 56px;
+            width: 40%;
+            border: #494b5e;
+            min-height: 1px;
+            border-radius: 28px;
+            font-size: 18px;
+            color: #fefefe;
+            background: #d05d84;
+            outline: 0;
+            margin: 0px auto 30px auto;
+            cursor: pointer;
+            &:focus {
+                // border-color: lighten($header-search-bg-color, 10%);
+                // outline: lighten($header-search-bg-color, 5%);
+                @include card(4);
+            }
+            &:disabled {
+                background-color: lighten($header-search-bg-color, 5%);
+                cursor: not-allowed;
+            }
+            &:hover {
+                @include card(1);
+            }
+        }
+    }
+}
+
+.mus-footer-parent {
+    .mus-footer {
+        height: 80px;
+        background-color: $header-search-bg-color;
+        .text-wraper {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .text {
+                font-size: 14px;
+                color: white;
+                font-weight: 300;
+                text-align: center;
+                width: 70%;
+            }
+        }
+    }
+}

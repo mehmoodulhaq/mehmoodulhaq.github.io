@@ -1,0 +1,34 @@
+<div class="container-fluid mus-header-parent">
+    <div class="row">
+        <div class="col mus-image-area">
+            <div class="mus-heder-center-image"></div>
+            <div class="mus-header-arrow"></div>
+            <div class="mus-header-logo"></div>
+            <div class="mus-header-powerd-by">Powered by spotify</div>
+            <div class="count" ng-if="Ctrl.pageCards.length">
+                <span ng-if="Ctrl.pageCards.length">{{Ctrl.cardsMetadata.offset + Ctrl.cardsMetadata.limit <= Ctrl.cardsMetadata.total ? Ctrl.cardsMetadata.offset + Ctrl.cardsMetadata.limit :  Ctrl.cardsMetadata.total}}</span>/<span>{{Ctrl.cardsMetadata.total}}</span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 mus-search-area" sticky=".mus-image-area">
+
+            <div class="mus-search-bar">
+
+                <!--ng-enter is a directive to detect enter btn press on inputs-->
+                <input type="text" ng-model="Ctrl.searchText" ng-enter="Ctrl.searchArtists($event)" placeholder="Search for artist">
+
+                <!--my-ng-enter is a directive for enter btn detection-->
+                <div ng-if="Ctrl.loading" class="loader-ring"></div>
+                <input ng-if="Ctrl.toggleBtnState()" type="button" ng-click="Ctrl.searchArtists()" class="hidden-sm-down" value="SEARCH">
+                <input ng-if="!Ctrl.toggleBtnState()" type="button" ng-click="Ctrl.searchArtists(true)" class="hidden-sm-down" value="MORE">
+            </div>
+            <input ng-if="Ctrl.toggleBtnState()" type="button" class="mus-search-button-mob-button hidden-md-up" ng-click="Ctrl.searchArtists();" value="SEARCH">
+            <input ng-if="!Ctrl.toggleBtnState()" type="button" class="mus-search-button-mob-button hidden-md-up" ng-click="Ctrl.searchArtists(true);" value="SHOW MORE">
+            <div ng-if="Ctrl.pageCard.lenght" class="count">
+                <span>{{Ctrl.cardsMetadata.offset + Ctrl.cardsMetadata.limit}}</span>/<span>{{Ctrl.cardsMetadata.total}}</span>
+            </div>
+        </div>
+    </div>
+</div>
+<!--https://invis.io/XVAJ2MMK7-->

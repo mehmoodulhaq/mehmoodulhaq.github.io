@@ -1,0 +1,28 @@
+<div class="container">
+    <!--"dashboardController as Ctrl" is present in each ng-include -->
+    <div class="row">
+        <div class="col px-0">
+            <header class="row justify-content-center">
+                <!--my-ng-include is a directive that eliminates the need of an isolated scope-->
+                <div class="col-xs-12 col-sm-12 col-md-12" my-ng-include="app/templates/dashboard_header.tpl.html">
+                    <!--pink landing image and search bar go in this tag-->
+                </div>
+            </header>
+            <section class="row">
+                <div class="col px-0" my-ng-include="app/templates/dashboard_content.tpl.html">
+                    <!--Search results will go in this tag-->
+                </div>
+                <div class="row"></div>
+            </section>
+            <footer class="row px-0">
+                <div class="col-xs-12 col-sm-12" my-ng-include="app/templates/dashboard_footer.tpl.html">
+                    <!--Footer information-->
+                </div>
+            </footer>
+        </div>
+    </div>
+</div>
+<!-- view album modal ; opneflag matche card.type-->
+
+<div ng-if="Ctrl.modals.artist" ng-include="Ctrl.modals.albumTemplate"></div>
+<div ng-if="Ctrl.modals.album" ng-include="Ctrl.modals.tracksTemplate"></div>

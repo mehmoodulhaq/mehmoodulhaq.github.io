@@ -1,0 +1,38 @@
+<div class="container-fluid mus-content-parent">
+    <div class="row">
+        <div class="col-xs-12 col-md-12 mus-cards-panel-wrapper">
+            <div ng-if="!!Ctrl.pageCards.length" class="mus-cards-panel">
+                <div class="mus-cards" ng-repeat="card  in Ctrl.pageCards track by $index" ng-click="Ctrl.modals.openModal(card)">
+                    <div class=" center-image" resp-image="Ctrl.getCardByStatus(card)"></div>
+                    <div class="center-image-overlay"></div>
+                    <div class="text-wraper">
+                        <div class="text ">{{Ctrl.getCardByStatus(card).name}}</div>
+                    </div>
+
+                    <div class="side-icon" ng-style="Ctrl.getIcon(card)"></div>
+                    <div class="action-icon ">
+                        <div ng-if="Ctrl.getCardByStatus(card).type == 'artist'" class="text">view album</div>
+                        <div ng-if="Ctrl.getCardByStatus(card).type == 'album'" class="text">view Tracks</div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Show me more button-->
+    <div class="row">
+        <div class="col-xs-12 mus-card-show-more-btn-area">
+            <input type="button" ng-if="Ctrl.cardsMetadata.next && Ctrl.pageCards.length" ng-disabled="!Ctrl.cardsMetadata.next" value="Show me More!" ng-click="Ctrl.searchArtists(true)">
+            <div class="count" ng-if="Ctrl.pageCards.length">
+                <span>{{Ctrl.cardsMetadata.offset + Ctrl.cardsMetadata.limit <= Ctrl.cardsMetadata.total ? Ctrl.cardsMetadata.offset + Ctrl.cardsMetadata.limit :  Ctrl.cardsMetadata.total}}</span>/<span>{{Ctrl.cardsMetadata.total}}</span>
+            </div>
+        </div>
+    </div>
+    <div ng-if="!Ctrl.pageCards.length" class="row">
+        <div class="col-xs-12 col-md-12 mus-cards-empty hidden-sm-down">
+            <div class="mus-magnifier"></div>
+            <div class="text">Your Results will show here</div>
+        </div>
+    </div>
+
+</div>
